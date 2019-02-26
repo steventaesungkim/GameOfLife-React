@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Main from './Main';
 
-ReactDOM.render(<p> hello game of life</p>, document.getElementById('root'));
+ReactDOM.render(<Main/>, document.getElementById('root'));
