@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import Box from './Box';
 
 class Grid extends Component { 
-    constructor(props) {
-        super(props);
-        this.state = {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
 
-        }
-    }
+    //     }
+    // }
     render() {
         const width = (this.props.cols) * 14;
-        const rowsArr = [];
-        const boxClass = "";
+        let rowsArr = [];
+        let boxClass = "";
         for (let i = 0; i < this.props.rows; i++) {
             for (let j = 0; j < this.props.cols; j++) {
                 let boxId = i + "_" + j;
@@ -31,7 +31,7 @@ class Grid extends Component {
         }
         return (
             <div className="grid" style={{width: width}}>
-                {{rowsArr}}
+                {rowsArr}
             </div>
         );
     }
