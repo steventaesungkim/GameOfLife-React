@@ -28,6 +28,18 @@ class Main extends Component {
             </div>
         );
     }
+
+    selectBox = (row, cols) => {
+        let gridCopy = arrayClone(this.state.gridFull);
+        gridCopy[row][cols] = !gridCopy[row][cols];
+        this.setState({
+            gridFull: gridCopy
+        })
+    }
+}
+
+function arrayClone(arr) {
+    return JSON.parse(JSON.stringify(arr));
 }
 
 export default Main;
