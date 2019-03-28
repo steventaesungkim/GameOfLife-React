@@ -14,6 +14,10 @@ class Main extends Component {
         }
     }
 
+    componentDidMount() {
+        this.seed();
+    }
+
     render() {
         return (
             <div>
@@ -34,7 +38,18 @@ class Main extends Component {
         gridCopy[row][cols] = !gridCopy[row][cols];
         this.setState({
             gridFull: gridCopy
-        })
+        });
+    }
+
+    seed = () => {
+        let gridCopy = arrayClone(this.state.gridFull);
+        for (let i = 0; i < this.rows; i++){
+            for (let j = 0; j < this.cols; j++){
+                if (Math.floor(Math.random()) * 4 ===1) {
+                    gridCopy[i][j] = true;
+                }
+            }
+        }
     }
 }
 
